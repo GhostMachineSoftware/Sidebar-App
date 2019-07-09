@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>        
+        <script src="/js/jquery.slidereveal.min.js"></script>
+        <style>
+            *{box-sizing: content-box}
+            .red{border:1px solid red; height:100px; width:100px;margin:5px;border-radius:10px}
+            .blue{border:1px solid blue; height:100px; width:100px;margin:5px;border-radius:10px}
+            .green{border:1px solid green; height:100px; width:100px;margin:5px;border-radius:10px}
+
+            #slider{top:0; right:0; height: 100%!important; width:35vw!important; border-left:2px solid #7676b8; transition: all 300ms ease 0s;}
+            #trigger {
+                background-color: #ddddeb;                
+                padding: 5px 0 0 10px;                
+                position: absolute;
+                top: 0px;
+                left:-89px;
+                width: 75px;
+                cursor: pointer;
+                border:1px solid #7676b8;
+                border-radius:10px 0 0 10px;
+                box-shadow: 1px 2px 5px #666;
+                color:#545487;
+                z-index: 1002;
+            }
+            #trigger:hover{background-color:#7676b8;color:white} 
+            
+            .sidebar .appContent {background-color:#ddddeb;opacity:.8;height:99vh;width:67%;padding:5px 5px 0 5px}
+            .sidebar .appTabs {height:99vh;padding-top:3px;margin-top:3px;border:1px solid #7676b8;border-bottom:1px solid #7676b8; box-shadow: 1px 2px 5px #666}
+            .sidebar .appTabs .nav-link {color:#545487}
+            .sidebar .appTabs .nav-link:hover{background-color:#7676b8;color:white!important}
+            .sidebar .nav-pills .nav-link.active{background-color:#545487;color:white}
+            .scrollbar{overflow-y:scroll;overflow-x:hidden;height:100%}
+            .scrollbar::-webkit-scrollbar{background-color:#ddddeb}
+            .scrollbar::-webkit-scrollbar-track{background-color:#ddddeb}
+            .scrollbar::-webkit-scrollbar-thumb{background-color:#7676b8}
+            .usefulLinks .card{margin-bottom:5px}
+            .usefulLinks .card-header{background-color:#ddddeb;border:2px solid #7676b8; border-radius:10px 10px 0 0; box-shadow: 1px 2px 5px #666;text-decoration: none}
+            .usefulLinks .card-header:hover{background-color:#7676b8;}
+            .usefulLinks .card-header:hover .card-link{color:white!important}
+            .usefulLinks .card-header .card-link{color:#545487!important}
+            .usefulLinks .card-body{border:1px solid #7676b8;background:none; color:#545487}
+            .metrotiles {left:10px;position:relative}
+        </style>
+    </head>
+    <body>
+        <div class="container left-shadow-overlay" id="slider">
+            <h3 role="button" class="btn btn-alert" id='trigger'>Apps</h3>
+            <div class="row sidebar">   
+                <div class="appContent scrollbar">
+                    <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade active" id="links" role="tabpanel" aria-labelledby="v-pills-links-tab">
+                        <div id="accordion" class="usefulLinks">
+                            <div class="card">
+                                <a class="card-header" data-toggle="collapse" href="#collapseOne">
+                                    <div class="card-link">
+                                        Collapsible Group Item #1
+                                    </div>
+                                </a>
+                                <div id="collapseOne" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        Lorem ipsum..
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <a class="collapsed card-header" data-toggle="collapse" href="#collapseTwo">
+                                    <div class="card-link">
+                                        Collapsible Group Item #2
+                                    </div>
+                                </a>
+                                <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        Lorem ipsum..
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <a class="collapsed card-header" data-toggle="collapse" href="#collapseThree">
+                                    <div class="card-link">
+                                        Collapsible Group Item #3
+                                    </div>
+                                </a>
+                                <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        Lorem ipsum..
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade metrotiles" id="metrotiles" role="tabpanel" aria-labelledby="v-pills-metrotiles-tab">
+                        <div class="row">
+                            <div class="red"></div>                            
+                            <div class="blue"></div>                            
+                            <div class="green"></div>                            
+                        </div>
+                        <div class="row">
+                            <div class="red"></div>                            
+                            <div class="blue"></div>                            
+                            <div class="green"></div>                            
+                        </div>
+                        <div class="row">
+                            <div class="red"></div>                            
+                            <div class="blue"></div>                            
+                            <div class="green"></div>                            
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="help" role="tabpanel" aria-labelledby="v-pills-help-tab">this will show the help desk bot</div>
+                    <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">something else...</div>
+                    </div>
+                </div>
+                <div class="col-3 appTabs">
+                    <div class="nav flex-column nav-pills pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link" id="links-tab" data-toggle="pill" href="#links" role="tab" aria-controls="v-pills-links" aria-selected="true">Links</a>
+                    <a class="nav-link" id="metrotile-tab" data-toggle="pill" href="#metrotiles" role="tab" aria-controls="v-pills-metrotiles" aria-selected="false">Metrotiles</a>
+                    <a class="nav-link" id="help-tab" data-toggle="pill" href="#help" role="tab" aria-controls="v-pills-help" aria-selected="false">IT Help</a>
+                    <a class="nav-link" id="settings-tab" data-toggle="pill" href="#settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Tab 4</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <script>
+            $('#slider').slideReveal({
+                trigger: $("#trigger"),
+                push: false,
+                position: "right",
+                speed: 600,
+                autoEscape: false
+            });
+        </script>
+    </body>
+</html>

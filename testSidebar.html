@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>        
+        <script src="/js/jquery.slidereveal.min.js"></script>
+        <style>
+            /**{box-sizing: content-box}
+            .sidebar{position:fixed; top:0!important; right: 0!important; height: 100%!important; width:250px; transition: all 300ms ease 0s;}
+            #menu-bar{background-color:transparent;color: #545487;z-index: 1002;}
+            #menu-bar .handle {
+                background-color: #ddddeb;
+                left: -86px;
+                padding: 5px 0 0 10px;                
+                position: absolute;
+                top: 0px;
+                width: 75px;
+                cursor: pointer;
+                border:1px solid #7676b8;
+                border-radius:10px 0 0 10px;
+                color:#545487;
+            }
+            #menu-bar .handle:hover{background-color:#7676b8;color:white}            
+            .sidebar .pills {position: relative;left:-10px}
+            .sidebar .appContent {height:70vh;border:2px solid #7676b8;border-radius:10px 0 0 10px;background-color:#ddddeb; box-shadow: 0px 2px 5px #666}
+            .sidebar .appTabs {height:70vh;border:1px solid #7676b8;background-color:#ddddeb; box-shadow: 1px 2px 5px #666}
+            .nav-link:hover{background-color:#7676b8;color:white}
+            .nav-pills .nav-link.active{background-color:#545487;color:white}
+            .scrollbar{overflow-y:scroll;overflow-x:hidden;height:100%}
+            .scrollbar::-webkit-scrollbar{background-color:#ddddeb}
+            .scrollbar::-webkit-scrollbar-track{background-color:#ddddeb}
+            .scrollbar::-webkit-scrollbar-thumb{background-color:#7676b8}*/
+            #menu-bar {
+                background-color: #BDBDBD;
+                color: #fff;
+                z-index: 1002;
+                position: fixed;
+                width: 250px;
+                transition: all 300ms ease 0s;
+                height: 100%;
+                top: 0px;
+                right: 0px;                
+            }
+            #menu-bar .handle{
+                position: fixed;
+                width: 250px;
+                transition: all 300ms ease 0s;
+                height: 100%;
+                top: 0px;
+                right: 0px;                
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container left-shadow-overlay" id="menu-bar">
+            <div class="handle"><h4>Apps</h4></div>
+            <div class="row">   
+                <div class="col-9 appContent">
+                    <div class="tab-content scrollbar" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="links" role="tabpanel" aria-labelledby="v-pills-links-tab">this will show the useful links app</div>
+                    <div class="tab-pane fade" id="metrotiles" role="tabpanel" aria-labelledby="v-pills-metrotiles-tab">this will show the metrotiles app</div>
+                    <div class="tab-pane fade" id="help" role="tabpanel" aria-labelledby="v-pills-help-tab">this will show the help desk bot</div>
+                    <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">something else...</div>
+                    </div>
+                </div>
+                <div class="col-3 appTabs">
+                    <div class="nav flex-column nav-pills pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link" id="links-tab" data-toggle="pill" href="#links" role="tab" aria-controls="v-pills-links" aria-selected="true">Links</a>
+                    <a class="nav-link" id="metrotile-tab" data-toggle="pill" href="#metrotiles" role="tab" aria-controls="v-pills-metrotiles" aria-selected="false">Metrotiles</a>
+                    <a class="nav-link" id="help-tab" data-toggle="pill" href="#help" role="tab" aria-controls="v-pills-help" aria-selected="false">IT Help</a>
+                    <a class="nav-link" id="settings-tab" data-toggle="pill" href="#settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Tab 4</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var slider = $("#menu-bar").slideReveal({
+                // width: 100,
+                push: false,
+                position: "right",
+                // speed: 600,
+                trigger: $(".handle"),
+                // autoEscape: false,
+                //shown: function(obj){
+                //    obj.find(".handle").html('<span class="glyphicon glyphicon-chevron-right"></span>');
+                //    obj.addClass("left-shadow-overlay");
+                //},
+                //hidden: function(obj){
+                //    obj.find(".handle").html('<span class="glyphicon glyphicon-chevron-left"></span>');
+                //    obj.removeClass("left-shadow-overlay");
+                //}
+            });        
+        </script>
+    <body>
+</html>
